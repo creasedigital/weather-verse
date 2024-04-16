@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Card from "./components/card";
+import SearchInput from "./components/search";
+import { config } from "./config";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const { API_BASE_URL, API_KEY,  } = config
+
+  // console.log(API_KEY, API_BASE_URL)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="relative min-h-screen w-full">
+      
+      <main className="absolute -top-[80px] min-h-screen bg-[url(./assets/images/dark-sky-cityscape-mountain.jpg)] mt-20 bg-cover bg-center h-screen w-full px-8 py-6">
+        {/* <div className="absolute w-full h-full -z-0 bg-black opacity-80"></div> */}
+      <header>
+      <SearchInput />
+      </header>
+      <section>
+        <Card />
+      </section>
+      <aside>
+
+      </aside>
+      </main>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
